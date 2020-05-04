@@ -1,7 +1,7 @@
 
 public class Solution {
 	
-	public static int countStepsTo1(int n){
+	public static int countStepsTo1(int n, int[] dp){
 		
 	/* Your class should be named Solution.
 	 * Don't write main() function.
@@ -11,6 +11,8 @@ public class Solution {
 	 */
         
         if(n <= 1) return 0;
+
+        if(dp[n] != -1) return dp[n];
         
         int ans = 1 + countStepsTo1(n - 1);
         
@@ -21,7 +23,8 @@ public class Solution {
         if(n % 3 == 0){
             ans = Math.min(ans, 1 + countStepsTo1(n / 3));
         }
-        	
+
+        dp[n] = ans;
         return ans;
 	
 	}
