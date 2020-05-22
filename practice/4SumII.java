@@ -27,6 +27,6 @@ class Solution {
             }
         }
         return tuplesCount;
-        
+            
     }
 }
